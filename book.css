@@ -1,0 +1,957 @@
+/* UNIVERSAL SELECTOR */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* USING ROOT VARIABLE */
+:root {
+    --abc: white;
+    --gray: lightgray;
+    --blue: #ebfefe;
+    --d-blue: darkblue;
+    --loc1: crimson;
+    --loc2: green;
+    --yellow: #fff01b;
+    --loc3: rgb(245, 44, 235);
+}
+
+/* NAV DIV */
+nav {
+    width: 100%;
+    height: calc(100px - 10px);
+    display: flex;
+    color: var(--abc);
+    position: fixed;
+    z-index: 10;
+    background-color: rgb(12, 12, 65);
+}
+
+/* LEFT DIV */
+.left {
+    width: calc(100% - 70%);
+    height: calc(100px - 10px);
+    padding-left: 30px;
+}
+
+.left>img {
+    width: calc(100% - 50%);
+    height: calc(100px - 10px);
+}
+
+/* RIGHT DIV */
+.right {
+    width: calc(100% - 30%);
+    height: calc(100px - 10px);
+    /* border: 2px solid red; */
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 20px;
+    display: flex;
+}
+
+/* BOOK BUTTON */
+button .book {
+    width: calc(100px - 0px);
+    padding: 5px;
+    display: inline-block;
+    color: rgb(12, 12, 65);
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.book:hover {
+    color: red;
+}
+
+a {
+    text-decoration: none;
+    color: var(--abc);
+}
+
+.right>a:hover {
+    text-decoration: 2px solid var(--abc) underline;
+}
+
+.right>a>i {
+    font-size: 30px;
+}
+
+.right>a>i:hover {
+    color: lightblue;
+}
+
+nav>input {
+    display: none !important;
+}
+
+.bar {
+    opacity: 0;
+}
+
+/* MOBILE VIEW IN NAV BAR */
+@media only screen and (min-width:300px) and (max-width:500px) {
+    .overall {
+        width: 100%;
+    }
+
+    .nav {
+        width: 100%;
+    }
+
+    .left {
+        width: calc(100% - 10%);
+    }
+
+    .right {
+        position: fixed;
+        top: 90px;
+        width: 100%;
+        left: 100%;
+        display: flex;
+        flex-direction: column;
+        color: darkblue;
+        height: calc(100vh - 40vh);
+        background-color: lightcyan;
+        transition: all 1s;
+    }
+
+    a {
+        color: darkblue;
+    }
+
+    .bar {
+        position: absolute;
+        top: 30px;
+        right: 25px;
+        font-size: 30px;
+        opacity: 1;
+    }
+
+    .bar:hover {
+        color: lightblue;
+    }
+
+    nav>input:checked~.right {
+        left: 0%;
+        z-index: 1;
+    }
+
+    nav>input {
+        display: none !important;
+    }
+}
+
+/* TAB VIEW IN NAV BAR */
+
+@media only screen and (min-width:500px) and (max-width:800px) {
+    .overall {
+        width: 100%;
+    }
+
+    .nav {
+        width: 100%;
+    }
+
+    .left {
+        width: calc(100% - 10%);
+    }
+
+    .left>img {
+        width: calc(100% - 65%);
+    }
+
+    .right {
+        position: fixed;
+        top: 90px;
+        width: 100%;
+        left: 100%;
+        display: flex;
+        flex-direction: column;
+        color: darkblue;
+        height: calc(100vh - 40vh);
+        background-color: lightcyan;
+        transition: all 1s;
+    }
+
+    a {
+        color: darkblue;
+    }
+
+    .bar {
+        position: absolute;
+        top: 30px;
+        font-size: 30px;
+        opacity: 1;
+    }
+
+    .bar:hover {
+        color: lightblue;
+    }
+
+    nav>input:checked~.right {
+        left: 0%;
+        z-index: 999;
+    }
+
+    nav>input {
+        display: none !important;
+    }
+}
+
+/* BOOK-CONAINER DIV */
+
+.book-container {
+    width: 100%;
+    min-height: 600px;
+    background-color: var(--blue);
+}
+
+.book-contain {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.book-contain>img {
+    width: 100%;
+    height: 100vh;
+    filter: brightness(50%);
+}
+
+.book-content {
+    width: 70%;
+    /* border:2px solid red; */
+    color: var(--abc);
+    position: absolute;
+    bottom: 35%;
+    left: 18%;
+}
+
+.book-content>h1 {
+    font-size: 2.3rem;
+}
+
+.book-content>button {
+    transform: translateX(300%);
+    margin-top: 30px;
+    width: 120px;
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: var(--d-blue);
+    color: var(--abc);
+
+}
+
+.book-content:hover button {
+    background-color: var(--abc);
+    color: var(--d-blue);
+}
+
+
+/* MOBILE VIEW FOR BOOK-CONTAINER DIV */
+@media only screen and (min-width:300px) and (max-width:500px) {
+    .book-content {
+        bottom: 25%;
+    }
+
+    .book-content>h1 {
+        font-size: 1.5rem;
+    }
+
+    .book-content>button {
+        transform: translateX(50%);
+    }
+}
+
+
+
+/* TAB VIEW FOR BOOK-CONTAINER DIV */
+@media only screen and (min-width:500px) and (max-width:800px) {
+    .book-content {
+        bottom: 25%;
+    }
+
+    .book-content>h1 {
+        font-size: 1.9rem;
+    }
+
+    .book-content>button {
+        transform: translateX(80%);
+    }
+}
+
+/* BOOK DIV IN BOOK-CONTAINER */
+
+.book-branch {
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(243, 243, 243);
+}
+
+marquee {
+    height: 40px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.b-combine {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.b-combine-1 {
+    width: 49%;
+    padding: 20px;
+    background-color: var(--abc);
+    border-radius: 5px;
+    border: none;
+}
+
+.b-combine-1>h1 {
+    font-size: 1.1rem;
+    color: darkblue;
+}
+
+.b-one {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.b-one div {
+    width: 30%;
+    margin-top: 20px;
+    cursor: pointer;
+    border: 1px solid lightgrey;
+    padding: 10px;
+}
+
+.b-one div>img {
+    width: 50%;
+    height: 50px;
+    transform: translateX(50%);
+}
+
+.b-one div>h4 {
+    text-align: center;
+    padding-top: 10px;
+    color: var(--d-blue);
+}
+
+.b-one>div:hover {
+    background-color: #fddd00;
+}
+
+/* --------------------------DATE AND TIMING INFORMATION DIV------------------- */
+
+.b-date {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.b-date-combine {
+    width: 49%;
+    padding: 20px;
+    background-color: var(--abc);
+    border: none;
+    border-radius: 5px;
+}
+
+.b-date-combine>h1 {
+    font-size: 1.1rem;
+    color: var(--d-blue);
+}
+
+.b-two {
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.b-two>div {
+    width: 30%;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid lightgrey;
+}
+
+.b-two>div:hover {
+    background-color: #fddd00;
+}
+
+.b-two>div>p {
+    text-align: center;
+    padding-top: 5px;
+    color: var(--d-blue);
+}
+
+.b-two>div>h3 {
+    text-align: center;
+    color: var(--d-blue);
+    padding-top: 5px;
+}
+
+.b-two>div>h4 {
+    text-align: center;
+    color: var(--d-blue);
+    padding-top: 5px;
+}
+
+/*-------------------------------- PACKAGES IN WONDERLA ---------------------------------------- */
+
+
+.package {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pack {
+    width: 49%;
+    padding: 20px;
+    background-color: var(--abc);
+    border: none;
+    border-radius: 5px;
+}
+
+.pack>h1 {
+    font-size: 1.1rem;
+    color: var(--d-blue);
+}
+
+.pack>p {
+    padding-top: 10px;
+    font-size: 0.8rem;
+    color: var(--d-blue);
+}
+
+
+/* ------------------------------------ENTERY TICKET DIV--------------------------------------------- */
+
+.e-ticket {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.entry-ticket {
+    width: 49%;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--abc);
+}
+
+.entry-ticket>h1 {
+    font-size: 1.1rem;
+    color: var(--d-blue);
+}
+
+.entry-ticket>select {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+}
+
+
+/*------------------------------------------- SUMMARY DIV------------------------------------------------ */
+
+.summary {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.summary-combine {
+    width: 49%;
+    border: none;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: var(--abc);
+}
+
+.summary-combine>h1 {
+    font-size: 1.1rem;
+    color: var(--d-blue);
+}
+
+.e-total {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+}
+
+.e-total>div {
+    display: flex;
+    padding-bottom: 5px;
+    border-bottom: 1px solid lightgrey;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--d-blue);
+}
+
+/* MOBILE VIEW FOR TICKET BOOKING IN EACH BRANCH */
+
+@media only screen and (min-width:300px) and (max-width:500px) {
+    /* EACH BRANCH */
+
+    .b-combine-1 {
+        width: 100%;
+
+    }
+
+    .b-one {
+        flex-direction: column;
+    }
+
+    .b-one div {
+        width: 100%;
+    }
+
+    /* DATE AND TIMING INFORMATION DIV */
+    .b-date-combine {
+        width: 100%
+    }
+
+    .b-two {
+        flex-direction: column;
+    }
+
+    .b-two>div {
+        width: 100%;
+    }
+
+    /* PACKAGE DIV */
+    .pack {
+        width: 100%;
+    }
+
+    /* ENTERY TICKET DIV */
+    .entry-ticket {
+        width: 100%;
+    }
+
+    /* SUMMARY DIV */
+    .summary-combine {
+        width: 100%;
+    }
+}
+
+
+/* TAB VIEW FOR TICKET BOOKING IN EACH BRANCH */
+
+@media only screen and (min-width:500px) and (max-width:800px) {
+    /* EACH BRANCH */
+
+    .b-combine-1 {
+        width: 100%;
+    }
+
+    .b-one div {
+        width: 100%;
+    }
+
+    /* DATE AND TIMING INFORMATION DIV */
+    .b-date-combine {
+        width: 100%
+    }
+
+    .b-two>div {
+        width: 100%;
+    }
+
+    /* PACKAGE DIV */
+    .pack {
+        width: 100%;
+    }
+
+
+    /* ENTERY TICKET DIV */
+    .entry-ticket {
+        width: 100%;
+    }
+
+    /* SUMMARY DIV */
+    .summary-combine {
+        width: 100%;
+    }
+
+}
+
+/*--------------------------------------- SELECT PROPERTY ------------------------------*/
+.property {
+    width: 100%;
+    padding: 20px;
+    background-color: var(--blue);
+}
+
+.property>h1 {
+    text-align: center;
+    color: var(--d-blue);
+    padding-top: 20px;
+}
+
+.property-container {
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.p-combine {
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    border-radius: 5px;
+    background-color: rgb(36, 36, 36);
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.p-combine:hover {
+    background-color: white;
+}
+
+.p-combine:hover h2 {
+    color: var(--d-blue);
+}
+
+.p-combine:hover h2 {
+    color: var(--d-blue);
+}
+
+.p-one,
+.p-two {
+    width: 50%;
+}
+
+.p-one>h2,
+.p-two>h2 {
+    color: var(--abc);
+    font-size: 1.3rem;
+}
+
+.p-one>select,
+.p-two>select {
+    margin-top: 10px;
+    padding: 10px;
+    width: 90%;
+}
+
+.p-button {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.p-button>button {
+    width: 100px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--d-blue);
+    color: var(--abc);
+    font-size: 1rem;
+
+}
+
+.p-button:hover button {
+    background-color: var(--abc);
+    color: var(--d-blue);
+    border: 2px solid darkblue;
+}
+
+/* SELECT PROPERTY USING MOBILE VIEW */
+
+@media only screen and (min-width:300px) and (max-width:500px) {
+    .property>h1 {
+        font-size: 1.2rem;
+    }
+
+    .p-combine {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .p-one,
+    .p-two {
+        width: 100%;
+    }
+
+    .p-two {
+        margin-top: 10px;
+    }
+
+    .p-one>select,
+    .p-two>select {
+        width: 100%;
+    }
+
+}
+
+/* SELECT PROPERTY USING TAB VIEW */
+
+@media only screen and (min-width:500px) and (max-width:800px) {
+    .property>h1 {
+        font-size: 1.2rem;
+    }
+
+    .p-combine {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .p-one,
+    .p-two {
+        width: 100%;
+    }
+
+    .p-two {
+        margin-top: 10px;
+    }
+
+    .p-one>select,
+    .p-two>select {
+        width: 100%;
+    }
+
+}
+
+
+/*-------------------------- FOOTER DIV ------------------------------*/
+
+.foot-container {
+    width: 100%;
+    min-height: 400px;
+    background-color: var(--d-blue);
+    padding: 20px;
+}
+
+.foot-container>h1 {
+    text-align: center;
+    color: var(--abc);
+    font-size: 2rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.foot-combine {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    border: 2px solid whitesmoke;
+}
+
+.foot-one,
+.foot-two,
+.foot-three,
+.foot-four {
+    width: 25%;
+    padding: 10px;
+}
+
+.foot-one>h4,
+.foot-two>h4,
+.foot-three>h4,
+.foot-four>h4 {
+    font-weight: bold;
+    font-size: 1rem;
+    color: orange;
+}
+
+.foot-one p,
+.foot-two p,
+.foot-three p,
+.foot-four p {
+    padding-top: 15px;
+    font-size: 0.8rem;
+    color: var(--abc);
+}
+
+.foot-one p:hover {
+    text-decoration: 2px white underline;
+}
+
+.foot-two p:hover {
+    text-decoration: 2px white underline;
+}
+
+.foot-three p:hover {
+    text-decoration: 2px white underline;
+}
+
+.foot-four p:hover {
+    text-decoration: 2px white underline;
+}
+
+.social-media {
+    width: 100%;
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.font {
+    width: 30%;
+    display: flex;
+    padding: 20px;
+    justify-content: space-evenly;
+}
+
+.font i {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 30px;
+    padding-top: 10px;
+    color: blue;
+}
+
+.font .face {
+    padding-left: 15px;
+}
+
+.font .twitter {
+    padding-left: 10px;
+}
+
+.font .insta {
+    padding-left: 12px;
+}
+
+.font .you {
+    padding-left: 8px;
+}
+
+.face:hover {
+    background-color: lightblue;
+}
+
+.twitter:hover {
+    background-color: lightblue;
+    color: black;
+}
+
+.insta:hover {
+    background-color: lightblue;
+    color: darkmagenta;
+}
+
+.you:hover {
+    background-color: lightblue;
+    color: red;
+}
+
+.end {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--abc);
+}
+
+
+/*MOBILE VIEW FOR FOOTER */
+
+@media only screen and (min-width:300px) and (max-width:500px) {
+    .foot-combine {
+        flex-direction: column;
+    }
+
+    .foot-container>h1 {
+        font-size: 1.3rem;
+    }
+
+    .foot-one,
+    .foot-two,
+    .foot-three,
+    .foot-four {
+        width: 100%;
+    }
+
+    .foot-one p,
+    .foot-two p,
+    .foot-three p,
+    .foot-four p {
+        font-size: 0.8rem;
+    }
+
+    .font {
+        width: 100%;
+    }
+}
+
+
+/*TAB VIEW FOR FOOTER */
+
+@media only screen and (min-width:500px) and (max-width:800px) {
+    .foot-combine {
+        flex-direction: column;
+    }
+
+    .foot-container>h1 {
+        font-size: 1.3rem;
+    }
+
+    .foot-one,
+    .foot-two,
+    .foot-three,
+    .foot-four {
+        width: 100%;
+    }
+
+    .foot-one p,
+    .foot-two p,
+    .foot-three p,
+    .foot-four p {
+        font-size: 1rem;
+    }
+
+    .font {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width:800px) and (max-width:1000px) {
+
+    .foot-one p,
+    .foot-two p,
+    .foot-three p,
+    .foot-four p {
+        font-size: 0.6rem;
+    }
+
+    .font {
+        width: 100%;
+    }
+}

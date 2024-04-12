@@ -1,0 +1,901 @@
+/* GOOGLE FONT LINK */
+
+@import url('https://fonts.googleapis.com/css2?family=Angkor&family=Caesar+Dressing&family=Mochiy+Pop+P+One&family=Oleo+Script:wght@400;700&family=Pacifico&family=Permanent+Marker&family=Poller+One&family=Rubik+Gemstones&family=Sofia&display=swap');
+
+
+/* UNIVERSAL SELECTOR */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* USING ROOT VARIABLE */
+:root {
+    --abc: white;
+    --gray: lightgray;
+    --blue: #ebfefe;
+    --d-blue: darkblue;
+    --loc1: crimson;
+    --loc2: green;
+    --yellow: #fff01b;
+    --loc3: rgb(245, 44, 235);
+}
+
+/* NAV DIV */
+nav {
+    width: 100%;
+    height: calc(100px - 10px);
+    display: flex;
+    color: var(--abc);
+    position: fixed;
+    z-index: 10;
+    background-color: rgb(12, 12, 65);
+}
+
+/* LEFT DIV */
+.left {
+    width: calc(100% - 70%);
+    height: calc(100px - 10px);
+    padding-left: 30px;
+}
+
+.left>img {
+    width: calc(100% - 50%);
+    height: calc(100px - 10px);
+}
+
+/* RIGHT DIV */
+.right {
+    width: calc(100% - 30%);
+    height: calc(100px - 10px);
+    /* border: 2px solid red; */
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 20px;
+    display: flex;
+}
+
+/* BOOK BUTTON */
+button .book {
+    width: calc(100px - 0px);
+    padding:5px;
+    display: inline-block;
+    color: rgb(12, 12, 65);
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.book:hover {
+    color: red;
+}
+
+a {
+    text-decoration: none;
+    color: var(--abc);
+}
+
+.right>a:hover {
+    text-decoration: 2px solid var(--abc) underline;
+}
+
+.right>a>i {
+    font-size: 30px;
+}
+
+.right>a>i:hover {
+    color: lightblue;
+}
+
+nav>input {
+    display: none !important;
+}
+
+.bar {
+    opacity: 0;
+}
+
+/* MOBILE VIEW IN NAV BAR */
+@media only screen and (min-width:300px) and (max-width:500px) {
+    .overall {
+        width: 100%;
+    }
+
+    .nav {
+        width: 100%;
+    }
+
+    .left {
+        width: calc(100% - 10%);
+    }
+
+    .right {
+        position: fixed;
+        top: 90px;
+        width: 100%;
+        left: 100%;
+        display: flex;
+        flex-direction: column;
+        color: darkblue;
+        height: calc(100vh - 40vh);
+        background-color: lightcyan;
+        transition: all 1s;
+    }
+
+    a {
+        color: darkblue;
+    }
+
+    .bar {
+        position: absolute;
+        top: 30px;
+        right: 25px;
+        font-size: 30px;
+        opacity: 1;
+    }
+
+    .bar:hover {
+        color: lightblue;
+    }
+
+    nav>input:checked~.right {
+        left: 0%;
+        z-index: 1;
+    }
+
+    nav>input {
+        display: none !important;
+    }
+}
+
+/* TAB VIEW IN NAV BAR */
+
+@media only screen and (min-width:500px) and (max-width:800px) {
+    .overall {
+        width: 100%;
+    }
+
+    .nav {
+        width: 100%;
+    }
+
+    .left {
+        width: calc(100% - 10%);
+    }
+
+    .left>img {
+        width: calc(100% - 65%);
+    }
+
+    .right {
+        position: fixed;
+        top: 90px;
+        width: 100%;
+        left: 100%;
+        display: flex;
+        flex-direction: column;
+        color: darkblue;
+        height: calc(100vh - 40vh);
+        background-color: lightcyan;
+        transition: all 1s;
+    }
+
+    a {
+        color: darkblue;
+    }
+
+    .bar {
+        position: absolute;
+        top: 30px;
+        font-size: 30px;
+        opacity: 1;
+    }
+
+    .bar:hover {
+        color: lightblue;
+    }
+
+    nav>input:checked~.right {
+        left: 0%;
+        z-index: 999;
+    }
+
+    nav>input {
+        display: none !important;
+    }
+}
+
+
+/* CONTACT CONTAINER DIV */
+
+.contact {
+    width: 100%;
+    min-height: 600px;
+}
+
+.contact-container {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+
+.contact-container>img {
+    width: 100%;
+    height: 100vh;
+    filter: brightness(50%);
+}
+
+.contact-content {
+    width: 60%;
+    position: absolute;
+    bottom: 35%;
+    left: 20%;
+}
+
+.contact-content>h1 {
+    color: white;
+    font-size: 2.3rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.contact-content>button {
+    transform: translateX(300%);
+    margin-top: 20px;
+    width: 120px;
+    padding: 10px;
+    background-color: var(--d-blue);
+    color: var(--abc);
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+}
+
+/* MOBILE VIEW  FOR CONTACT-MAIN DIV */
+
+@media only screen and (min-width:300px) and (max-width:500px) {
+    .contact-content{
+        bottom: 20%;
+    }
+    .contact-content>h1{
+        font-size: 1.8rem;
+    }
+   
+    .contact-content>button {
+        transform: translateX(40%);
+    }
+}
+
+/* TAB VIEW  FOR CONTACT-MAIN DIV */
+
+@media only screen and (min-width:500px) and (max-width:800px) {
+    .contact-content{
+        bottom: 20%;
+    }
+    .contact-content>h1{
+        font-size: 1.8rem;
+    }
+   
+    .contact-content>button {
+        transform: translateX(80%);
+    }
+}
+
+/* ---------------------------EACH BRANCH CONTACT INFORMATION ------------------------------*/
+
+
+.contact-info-container{
+    width:100%;
+    min-height: 300px;
+    padding: 20px;
+    background-color: var(--blue);
+}
+.contact-info-container>h1{
+    text-align: center;
+    padding-top:10px;
+    transition: all 1s ease-in;
+    color:var(--d-blue);
+    font-size: 2rem;
+}
+.c-info{
+    width:100%;
+    padding: 20px;
+    margin-top: 30px;
+    gap:10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.c-info>.loc1,.c-info>.loc2,.c-info>.loc3,.c-info>.loc4{
+    width:25%;
+    padding: 10px;
+  border-radius: 5px;
+}
+.c-info>.loc1{
+    background-color: var(--loc1);
+}
+.c-info>.loc1>h1,.c-info>.loc2>h1,.c-info>.loc3>h1,.c-info>.loc4>h1{
+    color:white;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.c-info>.loc2{
+    background-color: var(--loc2);
+}
+.c-info>.loc3{
+    background-color: var(--loc3);
+}
+.c-info>.loc4{
+    background-color:var(--d-blue);
+}
+
+
+/*MOBILE VIEW FOR CONTACT CONTAINER DIV */
+
+@media only screen and (min-width:300px) and (max-width:500px) {
+    .c-info{
+        flex-direction: column;
+    }
+    .c-info>.loc1,.c-info>.loc2,.c-info>.loc3,.c-info>.loc4{
+        width:100%;
+    }
+
+}
+
+
+/*TAB VIEW FOR CONTACT CONTAINER DIV */
+
+@media only screen and (min-width:500px) and (max-width:800px) {
+    .c-info{
+      flex-direction: column;
+    }
+    .c-info>.loc1,.c-info>.loc2,.c-info>.loc3,.c-info>.loc4{
+        width:100%;
+    }
+
+}
+/*-------------------- WONDERLA KOCHI CONTACT DIV------------------------*/
+
+.contact-contain{
+    width:100%;
+    background-color:var(--blue);
+    min-height: 600px;
+    padding: 10px;
+}
+.contact-kochi{
+    width:100%;
+    min-height:100vh;
+}
+.contact-kochi h1{
+    text-align: center;
+    color:var(--d-blue);
+}
+.c-kochi-combine{
+    width:100%;
+    min-height: 100vh;
+    position: relative;
+}
+.c-kochi-combine>img {
+    width:100%;
+    height:100vh;
+    margin-top: 30px;
+}
+.contact-content:hover button {
+    background-color: var(--abc);
+    color: var(--d-blue);
+}
+
+/*------------------------ KOCHI FORM ----------------------*/
+.kochi-form{
+    width:30%;
+    position: absolute;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: var(--abc);
+    bottom:0%;
+    right:1%;
+}
+.kochi-form>h1 {
+    font-size: 1.8rem;
+    color:black;
+    transition: all 1s ease-in;
+}
+.kochi-form:hover h1{
+    transform: translateY(10px);   
+}
+.kochi-form>h3{
+    font-size: 1.5rem;
+    text-align: center;
+    color:black;
+    padding-top: 20px;
+}
+.kochi-form>p{
+    font-size: 1.2rem;
+    color:black;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.kochi-form>p>span{
+    color:orange;
+}
+.kochi-form>form{
+    margin-top: 20px;
+}
+.kochi-form label{
+    color:black;
+    font-size: 1.1rem;
+    
+}
+.kochi-form input {
+    width:100%;
+    padding: 10px;
+    line-height: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border:1px solid lightgrey;
+}
+.kochi-form:hover input{
+    border:1px solid skyblue;
+}
+.kochi-form textarea{
+width:100%;
+padding: 10px;
+margin-top: 10px;
+border-radius: 5px;
+border:1px solid lightgrey;
+}
+.kochi-form:hover textarea{
+    border:1px solid skyblue;
+}
+.kochi-form button{
+    width:100%;
+    padding:10px;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    background-color:blue;
+    border:none;
+    border-radius: 5px;
+    color:var(--abc);
+}
+
+
+/* KOCHI FORM IN MOBILE VIEW */
+
+@media only screen and (min-width:300px) and (max-width:500px) {
+    .kochi-form{
+        position: unset;
+        width:100%;
+    }
+}
+
+
+
+/* KOCHI FORM IN TAB VIEW */
+
+@media only screen and (min-width:500px) and (max-width:800px) {
+    .kochi-form{
+        position: unset;
+        width:100%;
+    }
+}
+
+/*-------------------- WONDERLA HYDERBAD CONTACT DIV------------------------*/
+
+.contact-contain{
+    width:100%;
+    background-color:var(--blue);
+    min-height: 600px;
+}
+.contact-hyderabad{
+    width:100%;
+    min-height:100vh;
+}
+.contact-hyderabad h1{
+    text-align: center;
+    color:var(--d-blue);
+}
+.c-hyderabad-combine{
+    width:100%;
+    min-height: 100vh;
+    position: relative;
+}
+.c-hyderabad-combine>img {
+    width:100%;
+    height:100vh;
+    margin-top: 30px;
+}
+.contact-content:hover button {
+    background-color: var(--abc);
+    color: var(--d-blue);
+}
+
+/*------------------------HYDERABAD FORM ----------------------*/
+.hyderabad-form{
+    width:30%;
+    position: absolute;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: var(--abc);
+    bottom:0%;
+    right:1%;
+}
+.hyderabad-form>h1 {
+    font-size: 1.8rem;
+    color:black;
+    transition: all 1s ease-in;
+}
+.hyderabad-form:hover h1{
+    transform: translateY(10px);   
+}
+.hyderabad-form>h3{
+    font-size: 1.5rem;
+    text-align: center;
+    color:black;
+    padding-top: 20px;
+}
+.hyderabad-form>p{
+    font-size: 1.2rem;
+    color:black;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.hyderabad-form>p>span{
+    color:orange;
+}
+.hyderabad-form>form{
+    margin-top: 20px;
+}
+.hyderabad-form label{
+    color:black;
+    font-size: 1.1rem;
+    
+}
+.hyderabad-form input {
+    width:100%;
+    padding: 10px;
+    line-height: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border:1px solid lightgrey;
+}
+.hyderabad-form:hover input{
+    border:1px solid skyblue;
+}
+.hyderabad-form textarea{
+width:100%;
+padding: 10px;
+margin-top: 10px;
+border-radius: 5px;
+border:1px solid lightgrey;
+}
+.hyderabad-form:hover textarea{
+    border:1px solid skyblue;
+}
+.hyderabad-form button{
+    width:100%;
+    padding:10px;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    background-color:blue;
+    border:none;
+    border-radius: 5px;
+    color:var(--abc);
+}
+
+/* HYDERABED FORM IN MOBILE VIEW */
+
+@media only screen and (min-width:300px) and (max-width:500px) {
+    .hyderabad-form{
+        position: unset;
+        width:100%;
+    }
+}
+
+/* HYDERBAD FORM IN TAB VIEW */
+
+@media only screen and (min-width:500px) and (max-width:800px) {
+    .hyderabad-form{
+        width:100%;
+        position: unset;
+    }
+}
+
+/*-------------------- WONDERLA BENGALURU CONTACT DIV------------------------*/
+
+.contact-contain{
+    width:100%;
+    background-color:var(--blue);
+    min-height: 600px;
+}
+.contact-bengaluru{
+    width:100%;
+    min-height:100vh;
+}
+.contact-bengaluru h1{
+    text-align: center;
+    /* padding-top: 50px; */
+    color:var(--d-blue);
+}
+.c-bengaluru-combine{
+    width:100%;
+    min-height: 100vh;
+    position: relative;
+}
+.c-bengaluru-combine>img {
+    width:100%;
+    height:100vh;
+    margin-top: 30px;
+}
+.contact-content:hover button {
+    background-color: var(--abc);
+    color: var(--d-blue);
+}
+
+/*------------------------BENGLURU FORM ----------------------*/
+.bengaluru-form{
+    width:30%;
+    position: absolute;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: var(--abc);
+    bottom: 0%;
+    right:1%;
+}
+.bengaluru-form>h1 {
+    font-size: 1.8rem;
+    color:black;
+    transition: all 1s ease-in;
+}
+.bengaluru-form:hover h1{
+    transform: translateY(10px);   
+}
+.bengaluru-form>h3{
+    font-size: 1.5rem;
+    text-align: center;
+    color:black;
+    padding-top: 20px;
+}
+.bengaluru-form>p{
+    font-size: 1.2rem;
+    color:black;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.bengaluru-form>p>span{
+    color:orange;
+}
+.bengaluru-form>form{
+    margin-top: 20px;
+}
+.bengaluru-form label{
+    color:black;
+    font-size: 1.1rem;
+    
+}
+.bengaluru-form input {
+    width:100%;
+    padding: 10px;
+    line-height: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border:1px solid lightgrey;
+}
+.bengaluru-form:hover input{
+    border:1px solid skyblue;
+}
+.bengaluru-form textarea{
+width:100%;
+padding: 10px;
+margin-top: 10px;
+border-radius: 5px;
+border:1px solid lightgrey;
+}
+.bengaluru-form:hover textarea{
+    border:1px solid skyblue;
+}
+.bengaluru-form button{
+    width:100%;
+    padding:10px;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    background-color:blue;
+    border:none;
+    border-radius: 5px;
+    color:var(--abc);
+}
+
+
+/* BENGALURU FORM IN MOBILE VIEW */
+
+@media only screen and (min-width:300px) and (max-width:500px) {
+    .bengaluru-form{
+        position: unset;
+        width:100%;
+    }
+}
+
+/* BENGALURU FORM IN TAB VIEW */
+
+@media only screen and (min-width:500px) and (max-width:800px) {
+    .bengaluru-form{
+        position: unset;
+        width:100%;
+    }
+}
+
+/*-------------------------- FOOTER DIV ------------------------------*/
+
+.foot-container{
+    width:100%;
+    min-height:400px;
+    background-color: var(--d-blue);
+    padding: 20px;
+}
+.foot-container>h1{
+    text-align: center;
+    color:var(--abc);
+    font-size: 2rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.foot-combine{
+    width:100%;
+    padding: 20px;
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    border:2px solid whitesmoke;
+}
+.foot-one,.foot-two,.foot-three,.foot-four {
+    width:25%;
+    padding: 10px;
+}
+
+.foot-one>h4,.foot-two>h4,.foot-three>h4,.foot-four>h4{
+    font-weight: bold;
+    font-size: 1rem;
+    color:orange;
+}
+.foot-one p,.foot-two p,.foot-three p,.foot-four p{
+    padding-top: 15px;
+    font-size: 0.8rem;
+    color:var(--abc);
+}
+
+.foot-one p:hover  {
+    text-decoration: 2px white underline;
+}
+.foot-two p:hover  {
+    text-decoration: 2px white underline;
+}
+.foot-three p:hover  {
+    text-decoration: 2px white underline;
+}
+.foot-four p:hover  {
+    text-decoration: 2px white underline;
+}
+
+.social-media{
+    width:100%;
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+}
+.font {
+    width:30%;
+    display: flex;
+    padding: 20px;
+    justify-content: space-evenly;
+}
+.font i{
+    width:50px;
+    height:50px;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 30px;
+    padding-top: 10px;
+    color:blue;
+}
+.font .face{
+    padding-left:15px;
+}
+.font .twitter{
+    padding-left:10px;
+}
+.font .insta{
+    padding-left:12px;
+}
+.font .you{
+    padding-left:8px;
+}
+.face:hover{
+   background-color: lightblue;
+}
+.twitter:hover{
+    background-color: lightblue;
+    color:black;
+ }
+ .insta:hover{
+    background-color: lightblue;
+    color:darkmagenta;
+ }
+ .you:hover{
+    background-color: lightblue;
+    color:red;
+ }
+
+.end {
+    text-align: center;
+    font-size: 1.2rem;
+    color:var(--abc);
+}
+
+
+/*MOBILE VIEW FOR FOOTER */
+
+@media only screen and (min-width:300px) and (max-width:500px) {
+    .foot-combine{
+        flex-direction: column;
+    }
+    .foot-container>h1{
+        font-size: 1.3rem;
+    }
+    .foot-one,.foot-two,.foot-three,.foot-four{
+        width:100%;
+    }
+    .foot-one p,.foot-two p,.foot-three p,.foot-four p{
+        font-size: 0.8rem;
+    }
+    .font{
+        width:100%;
+    }
+}
+
+
+/*TAB VIEW FOR FOOTER */
+
+@media only screen and (min-width:500px) and (max-width:800px) {
+    .foot-combine{
+       flex-direction: column;
+    }
+    .foot-container>h1{
+        font-size: 1.3rem;
+    }
+    .foot-one,.foot-two,.foot-three,.foot-four{
+        width:100%;
+    }
+    .foot-one p,.foot-two p,.foot-three p,.foot-four p{
+        font-size: 1rem;
+    }
+    .font{
+        width:100%;
+    }
+}
+
+@media only screen and (min-width:800px) and (max-width:1000px){
+    .foot-one p,.foot-two p,.foot-three p,.foot-four p{
+        font-size: 0.6rem;
+    }
+    .font{
+        width:100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
